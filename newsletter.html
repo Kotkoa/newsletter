@@ -1,0 +1,580 @@
+<!-- lets create a responsive newsletter template -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Newsletter Update</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+      /* CLIENT-SPECIFIC STYLES */
+      body,
+      table,
+      td,
+      a {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+      table,
+      td {
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+      }
+      img {
+        -ms-interpolation-mode: bicubic;
+      }
+
+      /* RESET STYLES */
+      img {
+        border: 0;
+        height: auto;
+        line-height: 100%;
+        outline: none;
+        text-decoration: none;
+      }
+      table {
+        border-collapse: collapse !important;
+      }
+      body {
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        background-color: #1e1e1e;
+      }
+
+      /* iOS BLUE LINKS */
+      a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+      }
+
+      /* GMAIL BLUE LINKS */
+      u + #body a {
+        color: inherit;
+        text-decoration: none;
+        font-size: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+      }
+
+      /* SAMSUNG MAIL BLUE LINKS */
+      #MessageViewBody a {
+        color: inherit;
+        text-decoration: none;
+        font-size: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+      }
+
+      /* Universal styles for links and stuff */
+      a {
+        color: #229efd;
+        font-weight: bold;
+      }
+      a:hover {
+        color: #fd6350;
+        text-decoration: none;
+      }
+      a.button:hover {
+        background-color: #fd6350 !important;
+      }
+      p {
+        font-weight: 400;
+        color: #292a36;
+      }
+      .flex-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5%;
+      }
+      .flex-container-reverse {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5%;
+      }
+
+      /* Responsive styles */
+      @media screen and (max-width: 720px) {
+        .hide-table {
+          display: none !important;
+        }
+        .remove-padding {
+          padding: 20px !important;
+        }
+        .responsive-image {
+          width: 100% !important;
+          height: auto !important;
+        }
+        .flex-container,
+        .flex-container-reverse {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        .responsive-text {
+          font-size: 16px !important;
+        }
+      }
+    </style>
+  </head>
+  <body id="body" style="margin: 0 !important; padding: 0 !important">
+    <!-- Preview text for the inbox -->
+    <div style="display: none; max-height: 0; overflow: hidden">
+      Big Things Are Coming. Happy Holidays!
+    </div>
+
+    <table
+      border="0"
+      cellpadding="0"
+      cellspacing="0"
+      role="presentation"
+      width="100%"
+    >
+      <tr>
+        <td align="center">
+          <table
+            border="0"
+            class="mobile"
+            cellpadding="0"
+            cellspacing="0"
+            role="presentation"
+            width="100%"
+            style="
+              background-color: #ffffff;
+              color: #000000;
+              font-family: Arial, sans-serif;
+              font-size: 18px;
+              line-height: 25.5px;
+              margin: 0;
+              padding: 0;
+              max-width: 968px;
+            "
+          >
+            <!-- Logo image -->
+            <tr style="background-color: #000000">
+              <td align="center" style="padding: 30px">
+                <img
+                  src="./hcx-logo.png"
+                  alt="HCX Logo"
+                  width="126px"
+                  border="0"
+                  style="display: block; margin: 0 auto"
+                />
+              </td>
+            </tr>
+
+            <!-- Hero Image -->
+            <tr>
+              <td>
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <!-- First Column  -->
+                    <td valign="top" style="width: 20%" class="hide-table">
+                      <table
+                        border="0"
+                        cellpadding="0"
+                        cellspacing="0"
+                        class="hide-on-mobile"
+                        style="width: 100%"
+                      >
+                        <tr>
+                          <td bgcolor="#000000" style="padding: 35px"></td>
+                        </tr>
+                      </table>
+                    </td>
+
+                    <!-- Second Column with Image -->
+                    <td width="60%" align="center">
+                      <img
+                        src="./holiday-header.gif"
+                        alt="Big Things Are Coming"
+                        class="responsive-image"
+                      />
+                    </td>
+
+                    <!-- Third Column -->
+                    <td width="20%" valign="top" class="hide-table">
+                      <table
+                        border="0"
+                        cellpadding="0"
+                        cellspacing="0"
+                        width="100%"
+                        class="hide-on-mobile"
+                      >
+                        <tr>
+                          <td bgcolor="#000000" style="padding: 35px"></td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Body -->
+            <tr style="background-color: #ffffff">
+              <td align="left" style="padding: 50px 15%" class="remove-padding">
+                <h1
+                  style="
+                    margin: 0 0 13px 0;
+                    color: black;
+                    font-size: 36px;
+                    font-weight: 700;
+                    line-height: 39.6px;
+                    word-wrap: break-word;
+                  "
+                >
+                  Happy Holidays!
+                </h1>
+                <p
+                  style="
+                    margin: 0;
+                    color: #292a36;
+                    font-size: 18px;
+                    font-family: Arial;
+                    font-weight: 400;
+                    line-height: 25.2px;
+                    word-wrap: break-word;
+                  "
+                >
+                  As the new year approaches, we're excited to share some
+                  thrilling updates with you as we redefine the investment
+                  landscape. With a focus on the potential of human talent,
+                  we're gearing up for a year that promises innovation that
+                  drives personal growth.
+                </p>
+              </td>
+            </tr>
+
+            <!-- Divider -->
+            <tr style="background-color: #ffffff">
+              <td align="left" style="padding: 22px 15%" class="remove-padding">
+                <div
+                  height="1"
+                  style="
+                    line-height: 1px;
+                    font-size: 1px;
+                    opacity: 10%;
+                    background-color: #000000;
+                    width: 100%;
+                  "
+                >
+                  &nbsp;
+                </div>
+              </td>
+            </tr>
+
+            <!-- Intro TalentX Security -->
+            <tr style="background-color: #ffffff">
+              <td style="padding: 50px 15%; width: 100%" class="remove-padding">
+                <div class="flex-container-reverse" style="gap: 5%">
+                  <img
+                    src="./talentx-security.png"
+                    alt="TalentX Security"
+                    style="flex: 1; width: 60%"
+                  />
+
+                  <div style="flex: 1" class="hide-mobile">
+                    <h1
+                      style="
+                        margin: 0 0 13px 0;
+                        color: black;
+                        font-size: 36px;
+                        font-weight: 700;
+                        line-height: 39.6px;
+                        word-wrap: break-word;
+                      "
+                    >
+                      Introducing The TalentX Security
+                    </h1>
+                    <p
+                      style="
+                        margin: 0;
+                        color: #292a36;
+                        font-size: 18px;
+                        font-family: Arial;
+                        font-weight: 400;
+                        line-height: 25.2px;
+                        word-wrap: break-word;
+                      "
+                    >
+                      We're delighted to reveal that in Q1 2024 we’ll be
+                      launching the first TalentX public offering on the HCX
+                      Platform. This security is the foundation of a new asset
+                      class that enables investment in the future earnings of
+                      talented individuals.
+                    </p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Chad Steelberg Intro -->
+            <tr style="background-color: #ffffff">
+              <td
+                align="left"
+                style="padding: 0 15%; width: 100%"
+                class="remove-padding"
+              >
+                <div class="flex-container" style="gap: 5%">
+                  <img
+                    src="./talentx-chad.png"
+                    alt="Chad Steelberg"
+                    style="width: 50%"
+                  />
+                  <div style="flex: 1; padding-top: 20px" class="hide-mobile">
+                    <h1
+                      style="
+                        margin: 0 0 13px 0;
+                        color: black;
+                        font-size: 36px;
+                        font-weight: 700;
+                        line-height: 39.6px;
+                        word-wrap: break-word;
+                      "
+                    >
+                      The First TalentX IPO: Chad Steelberg
+                    </h1>
+                    <p
+                      style="
+                        margin: 0;
+                        color: #292a36;
+                        font-size: 18px;
+                        font-family: Arial;
+                        font-weight: 400;
+                        line-height: 25.2px;
+                        word-wrap: break-word;
+                      "
+                    >
+                      To kick things off, our very own founder, Chad Steelberg,
+                      will be featured in the first TalentX offering. Chad's
+                      journey is a testament to the power of human potential,
+                      and now you can invest in his future success. Stay tuned
+                      for more details on this groundbreaking offering!
+                    </p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Divider -->
+            <tr style="background-color: #ffffff">
+              <td align="left" style="padding: 50px 15%" class="remove-padding">
+                <div
+                  height="1"
+                  style="
+                    line-height: 1px;
+                    font-size: 1px;
+                    height: 100%;
+                    opacity: 10%;
+                    background-color: #000000;
+                  "
+                  width="100%"
+                >
+                  &nbsp;
+                </div>
+              </td>
+            </tr>
+
+            <!-- Next -->
+            <tr style="background-color: #ffffff">
+              <td
+                align="left"
+                style="
+                  padding: 0 15% 50px 15%;
+                  margin: 0;
+                  color: #292a36;
+                  font-size: 18px;
+                  font-family: Arial;
+                  font-weight: 400;
+                  line-height: 25.2px;
+                  word-wrap: break-word;
+                "
+                class="remove-padding"
+              >
+                <h1
+                  style="
+                    color: black;
+                    font-size: 24px;
+                    font-family: Arial;
+                    font-weight: 700;
+                    line-height: 26.4px;
+                    word-wrap: break-word;
+                  "
+                >
+                  What's Next?
+                </h1>
+                <p>
+                  This is the start of what promises to be an exhilarating
+                  journey. With an array of IPOs on the HCX Platform following
+                  Chad, we would love to stay connected. Here's how you can stay
+                  up to date as the excitement ramps up:
+                </p>
+
+                <ul>
+                  <li>
+                    Sign Up to Invest: Register on our website to stay updated
+                    on the HCX platform launch and TalentX offerings and HCX
+                    events.
+                  </li>
+                  <br />
+                  <li>
+                    Follow Us: For exclusive updates and insights into the world
+                    of innovative investment, follow our social media channels
+                    on Twitter, Facebook, Instagram and X.
+                  </li>
+                  <br />
+                  <li>
+                    Spread the Word: Help us grow the HCX community by referring
+                    friends and family who share your passion for passive
+                    investment and alternative assets. Encourage them to sign up
+                    today.
+                  </li>
+                </ul>
+
+                <p>
+                  As we look ahead to a ground-breaking year, we want to take a
+                  moment to wish you a joyful holiday season and abundant
+                  success in 2024. Thank you for being a part of HCX, and here's
+                  to turning your investment aspirations into reality!
+                </p>
+              </td>
+            </tr>
+
+            <!-- Footer information: Always include an unsubscribe link! -->
+            <tr style="background-color: #000000">
+              <td align="center" style="padding: 30px">
+                <img
+                  src="./hcx-logo.png"
+                  alt="HCX Logo"
+                  width="126px"
+                  style="display: block; margin: 0 auto"
+                />
+              </td>
+            </tr>
+            <tr style="background-color: #000000">
+              <td
+                align="center"
+                style="
+                  padding: 30px 22%;
+                  display: flex;
+                  gap: 5%;
+                  justify-content: space-around;
+                  opacity: 25%;
+                "
+              >
+                <a
+                  href="https://www.linkedin.com/company/hcx-official/"
+                  target="_blank"
+                >
+                  <img
+                    src="./icon-linkedin.png"
+                    alt="LinkedIn"
+                    width="44px"
+                    style="display: block; margin: 0 auto"
+                  />
+                </a>
+                <a
+                  href="https://www.instagram.com/hcx_official/"
+                  target="_blank"
+                >
+                  <img
+                    src="./icon-instagram.png"
+                    alt="Instagram"
+                    width="44px"
+                    style="display: block; margin: 0 auto"
+                  />
+                </a>
+                <a href="http://facebook.com/HCXonfacebook" target="_blank">
+                  <img
+                    src="./icon-facebook.png"
+                    alt="Facebook"
+                    width="44px"
+                    style="display: block; margin: 0 auto"
+                  />
+                </a>
+                <a
+                  href="https://www.threads.net/@hcx_official "
+                  target="_blank"
+                >
+                  <img
+                    src="./icon-threads.png"
+                    alt="Threads"
+                    width="44px"
+                    style="display: block; margin: 0 auto"
+                  />
+                </a>
+              </td>
+            </tr>
+            <tr style="background-color: #000000">
+              <td
+                align="center"
+                style="font-size: 16px; padding-top: 25px; margin: 0"
+              >
+                <p
+                  style="
+                    color: #bbbbbb;
+                    font-size: 15.3px;
+                    font-family: Arial;
+                    font-weight: 400;
+                    line-height: 15.3px;
+                    word-wrap: break-word;
+                    margin: 0 0 20px 0;
+                  "
+                >
+                  © 2023 | All Rights Reserved
+                </p>
+                <p
+                  style="
+                    color: #bbbbbb;
+                    font-size: 15.3px;
+                    font-family: Arial;
+                    font-weight: 400;
+                    line-height: 15.3px;
+                    word-wrap: break-word;
+                    margin: 0 0 20px 0;
+                  "
+                >
+                  No longer want to receive these emails?
+                  <a style="color: #bbbbbb; font-weight: 400" href="#"
+                    >Manage Preferences</a
+                  >
+                  or
+                  <a style="color: #bbbbbb; font-weight: 400" href="#"
+                    >Unsubscribe</a
+                  >.
+                </p>
+                <p
+                  style="
+                    color: #bbbbbb;
+                    font-size: 15.3px;
+                    font-family: Arial;
+                    font-weight: 400;
+                    line-height: 15.3px;
+                    word-wrap: break-word;
+                    margin: 0 0 20px 0;
+                  "
+                >
+                  Copy HCX. 514 30th St. Newport Beach, CA 92663
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
